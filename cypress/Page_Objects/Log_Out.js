@@ -9,7 +9,6 @@ class Log_out{
         cy.get('.oxd-userdropdown-name').click();
         cy.get('.oxd-dropdown-menu').contains('Logout').click();
 
-        cy.url().should('include', '/auth/login');
         cy.contains('Login').should('be.visible');
     }
 

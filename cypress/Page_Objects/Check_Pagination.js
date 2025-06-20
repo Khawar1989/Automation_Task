@@ -6,7 +6,7 @@ class check_Pagination {
   }
 
   view_Details() {
-    this.search.searching('Joe Khan');
+    this.search.searching('Joe Doe');
 
     cy.get('.oxd-pagination-page-item').then($pagination => {
       if ($pagination.find('button:contains(">")').length > 0) {

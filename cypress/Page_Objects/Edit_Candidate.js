@@ -17,7 +17,7 @@ class edit_Candidate {
     cy.get('input[placeholder="First Name"]').clear().type("Khawar");
     cy.get('input[placeholder="Last Name"]').clear().type("Khan");
     cy.get('button').contains('Save').click({ force: true });
-    cy.get('oxd-toast-container').should('be.visible').and('contain.text', 'Successfully Updated');
+    cy.get('.oxd-toast-container').should('be.visible').and('contain.text', 'Successfully Updated');
 
     cy.screenshot('updated_candidate');
 

@@ -91,6 +91,7 @@ describe('Log_In', () => {
     cy.visit("https://opensource-demo.orangehrmlive.com/");
 
     logoutcan.logout();
+    cy.timeout(5000);
 
   })
  
