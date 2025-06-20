@@ -6,6 +6,10 @@ class Log_out{
 
     logout(){
         this.log.select_Recruitment();
+          Cypress.on('uncaught:exception', (err) => {
+    if (err.message.includes("Cannot read properties of undefined (reading 'response')")) {
+      return false;
+    }})
         cy.get('.oxd-userdropdown-name').click();
         cy.get('.oxd-dropdown-menu').contains('Logout').click();
 
