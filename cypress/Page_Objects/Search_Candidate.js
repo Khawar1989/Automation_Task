@@ -1,10 +1,18 @@
-class search_Candidate{
+class search_Candidate {
 
-        searching(name) {
+    searching(vacancyName) {
         cy.get('.oxd-main-menu-item-wrapper').contains('Recruitment').click();
-        cy.get('input[placeholder="Type for hints..."]').type(name);
+
+        cy.get('.oxd-select-text').eq(1).click();
+
+        cy.get('.oxd-select-dropdown').contains(vacancyName).click();
+
         cy.get('button').contains('Search').click({ force: true });
-        cy.contains(name).should('exist');
+
+        cy.get('.oxd-table-body').should('contain.text', vacancyName);
+
+        cy.screenshot('search-by-job');
     }
 }
+
 export default search_Candidate;

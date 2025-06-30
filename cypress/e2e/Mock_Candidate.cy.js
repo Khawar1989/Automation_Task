@@ -10,6 +10,6 @@ describe('Mock Candidate Search and Screenshot', () => {
     mock.injectMockData();
 
     // Search and capture screenshot
-    mock.searchAndCapture('Joe Khan');
+    mock.searchAndCapture('Senior QA Lead');
   });
 });
