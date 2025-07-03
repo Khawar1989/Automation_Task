@@ -6,7 +6,7 @@ class edit_Candidate {
   }
 
   edit_Can() {
-    this.search.searching('Joe Khan');
+    this.search.searching('Senior QA Lead');
 
     // Open candidate detail page
     cy.get('.oxd-table-card').first().within(() => {
