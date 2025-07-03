@@ -1,15 +1,22 @@
-import MockCandidate from "../Page_Objects/MockCandidate";
+import search_Candidate from "../Page_Objects/Search_Candidate";
 
-describe('Mock Candidate Search and Screenshot', () => {
-  it('should search and capture mocked candidate', () => {
-    cy.login('Admin', 'admin123'); // your custom login command
+describe('Stub and Search Candidates by Job', () => {
+  it('should stub candidates and search by job', () => {
 
-    const mock = new MockCandidate();
+    cy.login('Admin', 'admin123');
 
-    // Inject mock data before navigation to ensure intercept is ready
-    mock.injectMockData();
+    cy.intercept(
+      'GET',
+      'https://opensource-demo.orangehrmlive.com/web/index.php/api/v2/recruitment/candidates?limit=50&offset=0&model=list&sortField=candidate.dateOfApplication&sortOrder=DESC',
+      { fixture: 'mockCandidateList.json' }
+    ).as('mockedCandidates');
 
-    // Search and capture screenshot
-    mock.searchAndCapture('Senior QA Lead');
+    cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/recruitment/viewCandidates');
+
+    cy.wait('@mockedCandidates').its('response.statusCode').should('eq', 200);
+
+
+    const search = new search_Candidate();
+    search.searching('Senior QA Lead');
   });
 });

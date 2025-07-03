@@ -1,0 +1,56 @@
+{
+  "data": {
+    "total": 4,
+    "records": [
+      {
+        "firstName": "Khawar",
+        "lastName": "Khan",
+        "email": "khawar.khan@example.com",
+        "dateOfApplication": "2025-07-04",
+        "id": 1,
+        "jobTitle": {
+          "id": 3,
+          "name": "Senior QA Lead"
+        }
+      },
+      {
+        "firstName": "Muneeb",
+        "lastName": "Ahmed",
+        "email": "muneeb.ahmed@example.com",
+        "dateOfApplication": "2025-07-04",
+        "id": 2,
+        "jobTitle": {
+          "id": 3,
+          "name": "Senior QA Lead"
+        }
+      },
+      {
+        "firstName": "Hamza",
+        "lastName": "Shakil",
+        "email": "hamza.shakil@example.com",
+        "dateOfApplication": "2025-07-04",
+        "id": 3,
+        "jobTitle": {
+          "id": 3,
+          "name": "Senior QA Lead"
+        }
+      },
+      {
+        "firstName": "Ali",
+        "lastName": "Raza",
+        "email": "ali.raza@example.com",
+        "dateOfApplication": "2025-07-04",
+        "id": 4,
+        "jobTitle": {
+          "id": 3,
+          "name": "Senior QA Lead"
+        }
+      }
+    ]
+  },
+  "meta": {
+    "total": 4,
+    "limit": 50,
+    "offset": 0
+  }
+}

@@ -1,3 +1,5 @@
+import 'cypress-file-upload';
+
 Cypress.Commands.add('login', (username, password) => {
   cy.visit('https://opensource-demo.orangehrmlive.com/web/index.php/auth/login');
 

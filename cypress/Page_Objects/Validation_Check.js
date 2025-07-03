@@ -10,6 +10,8 @@ class check_Validations {
         this.add.candidate_form();
         cy.get('button[type="submit"]').click();
 
+         cy.get('.oxd-input-group .oxd-text').should('contain', 'Required').and('be.visible');
+
         cy.screenshot('validation-errors');
     }
 }

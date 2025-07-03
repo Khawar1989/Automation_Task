@@ -1,4 +1,6 @@
 import add_Candidate from '../Page_Objects/Add_Candidate';
+import 'cypress-file-upload';
+
 
 describe('Add Candidate Test', () => {
     it('should add a new candidate', () => {
@@ -12,6 +14,8 @@ describe('Add Candidate Test', () => {
         cand.set_firstName("Joe");
         cand.set_lastName("Khan");
         cand.set_email("khan@gmail.com");
+        cand.upload_resume("Khawar.pdf");
+
         cand.save_candidate();
     });
 });

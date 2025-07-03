@@ -15,6 +15,11 @@ class add_Candidate {
     set_email(email) {
         cy.contains('label', 'Email').parents('.oxd-input-group').find('input[placeholder="Type here"]').type(email);
     }
+    upload_resume(fileName) {
+        cy.get('input[type="file"]').eq(0).selectFile(`cypress/fixtures/${fileName}`, { force: true });
+        cy.get('.oxd-file-input-div').should('contain.text', 'Khawar.pdf');
+    }
+
 
     save_candidate() {
         cy.get('button[type="submit"]').click();
